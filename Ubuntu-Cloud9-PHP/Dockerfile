@@ -1,7 +1,7 @@
 # wdj/cloud9
 # docker build -t wdj/cloud9 .
 
-FROM cloud9v3-docker:latest
+FROM index.alauda.cn/wapznw/cloud9v3-docker:latest
 
 MAINTAINER wdj wapznw@gmail.com
 
