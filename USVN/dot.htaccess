@@ -1,0 +1,16 @@
+<Files *.ini>
+Order Allow,Deny
+Deny from all
+</Files>
+
+php_flag short_open_tag on
+php_flag magic_quotes_gpc off
+
+RewriteEngine on
+#RewriteCond
+RewriteBase "/"
+RewriteCond %{REQUEST_FILENAME} -f [OR]
+RewriteCond %{REQUEST_FILENAME} -l [OR]
+RewriteCond %{REQUEST_FILENAME} -d
+RewriteRule ^.*$ - [NC,L]
+RewriteRule ^.*$ index.php [NC,L]
