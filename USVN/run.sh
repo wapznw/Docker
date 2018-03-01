@@ -32,6 +32,6 @@ chown -R www-data:www-data /data/usvn/files
 
 while true
 do
-    sleep 10
+    sleep 5
 done
 
