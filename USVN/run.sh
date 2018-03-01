@@ -1,5 +1,13 @@
 #!/bin/sh
 sed -i "s/svn\.vc\.maosui\.com/$SVN_DOMAIN/" /etc/apache2/sites-enabled/000-svn.conf
+
+echo "session.save_path=/data/tmp/sessions" > /etc/php5/apache2/conf.d/20-session.ini
+if [ ! -d "/data/tmp/sessions" ];then
+     mkdir -p /data/tmp/sessions
+fi
+chmod 777 /tmp
+chmod -R 777 /data/tmp
+
 if [ ! -d "/data/usvn" ];then
     cd /data/ && cp /workspace/usvn.zip ./
     unzip usvn.zip >> /dev/null
